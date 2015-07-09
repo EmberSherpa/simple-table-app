@@ -1,35 +1,38 @@
 export default function() {
 
-  this.get('/singers', function() {
-    return {
-      "singer": [
-        {'id': 1, 'name': 'Tom', 'part': 'Tenor'},
-        {'id': 2, 'name': 'Bob', 'part': 'Bass'},
-        {'id': 3, 'name': 'Trevor', 'part': 'Baritone'},
-        {'id': 4, 'name': 'Josh', 'part': 'Lead'},
-        {'id': 5, 'name': 'Jerry', 'part': 'Tenor'},
-        {'id': 6, 'name': 'Alice', 'part': 'Bass'},
-        {'id': 7, 'name': 'Len', 'part': 'Baritone'},
-        {'id': 8, 'name': 'Michele', 'part': 'Lead'},
-        {'id': 9, 'name': 'Mike', 'part': 'Tenor'},
-        {'id': 10, 'name': 'Taff', 'part': 'Bass'},
-        {'id': 11, 'name': 'Tino', 'part': 'Baritone'},
-        {'id': 12, 'name': 'Angie', 'part': 'Lead'}
-      ]};
-    });
-
-    this.get('/singers/:id', function(db, request) {
-      var id = request.params.id;
-      return db.singers.find(id);
-    });
-
     this.get('contestants', function() {
       return {
-        "contestant": [
-          {'id': 1, "singers": ["1", "2", "3", "4"]},
-          {'id': 2, "singers": ["5", "6", "7", "8"]}
-        ]};
-      });
+        data: [
+          {
+            id: 1,
+            type: 'contestant',
+            relationships: {
+              singers: {
+                data: [
+                  {type: "singer", id: "5"},
+                  {type: "singer", id: "6"},
+                  {type: "singer", id: "7"},
+                  {type: "singer", id: "8"}
+                ]
+              }
+            }
+          },
+        ],
+        included: [
+          {'id': 1, type: 'singers', attributes: {'name': 'Tom', 'part': 'Tenor'}},
+          {'id': 2, type: 'singers', attributes: {'name': 'Bob', 'part': 'Bass'}},
+          {'id': 3, type: 'singers', attributes: {'name': 'Trevor', 'part': 'Baritone'}},
+          {'id': 4, type: 'singers', attributes: {'name': 'Josh', 'part': 'Lead'}},
+          {'id': 5, type: 'singers', attributes: {'name': 'Jerry', 'part': 'Tenor'}},
+          {'id': 6, type: 'singers', attributes: {'name': 'Alice', 'part': 'Bass'}},
+          {'id': 7, type: 'singers', attributes: {'name': 'Len', 'part': 'Baritone'}},
+          {'id': 8, type: 'singers', attributes: {'name': 'Michele', 'part': 'Lead'}},
+          {'id': 9, type: 'singers', attributes: {'name': 'Mike', 'part': 'Tenor'}},
+          {'id': 10, type: 'singers', attributes: {'name': 'Taff', 'part': 'Bass'}},
+          {'id': 11, type: 'singers', attributes: {'name': 'Tino', 'part': 'Baritone'}},
+          {'id': 12, type: 'singers', attributes: {'name': 'Angie', 'part': 'Lead'}}
+        ]
+      }});
 
 
       // These comments are here to help you get started. Feel free to delete them.

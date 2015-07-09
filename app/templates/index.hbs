@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    {{#each columns as |part|}}
+    <th>{{part}}</th>
+    {{/each}}
+  </thead>
+  <tbody>
+    {{#each model as |contestant|}}
+    <tr>
+      {{#each columns as |part|}}
+      <td>{{find-singer contestant part}} <small>{{part}}</small></td>
+      {{/each}}
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

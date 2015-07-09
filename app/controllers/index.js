@@ -5,8 +5,9 @@ export default Ember.Controller.extend({
 });
 
 // Ember.Handlebars.registerBoundHelper('find-singer', function(contestant, part){
-//   var contestantPart = contestant.get('part');
-//   if(contestantPart == part){
-//     return contestant.get('name');
-//   };
+//   // var contestantPart = contestant.get('part');
+//   // if(contestantPart == part){
+//   //   return contestant.get('name');
+//   // };
+//   console.log(part);
 // });

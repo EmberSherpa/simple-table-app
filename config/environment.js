@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'table-app',
+    modulePrefix: 'simple-table-app',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

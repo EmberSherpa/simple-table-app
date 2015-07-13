@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    {{#each columns as |column|}}
+    <th>{{column}}</th>
+    {{/each}}
+  </thead>
+  <tbody>
+    {{#each rows as |row|}}
+    <tr>
+      {{#each columns as |column|}}
+      <td>{{find-singer row column}} <small>{{column}}</small></td>
+      {{/each}}
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

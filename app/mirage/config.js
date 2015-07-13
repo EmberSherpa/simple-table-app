@@ -60,7 +60,8 @@ export default function() {
         {'id': 11, type: 'singers', attributes: {'name': 'Tino', 'part': 'Baritone'}},
         {'id': 12, type: 'singers', attributes: {'name': 'Angie', 'part': 'Lead'}}
       ]
-    }});
+    };
+  });
 
 
     // These comments are here to help you get started. Feel free to delete them.
